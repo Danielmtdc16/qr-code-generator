@@ -5,13 +5,14 @@ let qr_code = document.querySelector("#qr-code")
 
 btn_generate.addEventListener('click', () => {
 
-    qr_code.innerHTML = "";
-
     if (url_qrCode.value) {
+        warning.innerHTML = "";
         let qrCode = new QRCode(qr_code, {
             text: url_qrCode.value,
             width: 200,
-            height: 200
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#18181b"
         });
         qrCode.innerHTML = qrCode;
     } else {
