@@ -6,8 +6,10 @@ let qr_code = document.querySelector("#qr-code")
 btn_generate.addEventListener('click', () => {
 
     if (url_qrCode.value) {
-
+        let qrCode = new QRCode(qr_code, url_qrCode.value);
+        qrCode.innerHTML = qrCode;
     } else {
+        qr_code.innerHTML = "";
         warning.innerHTML = "coloque uma URL para gerar!";
     }
 
